@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+
+    <!-- LEFT SIDE -->
+    <div class="left-section">
+        <div class="quote-box">
+            <h1>Elite Auctions</h1>
+
+            <p class="quote">
+                "Every bid brings you closer to victory."
+            </p>
+
+            <p>
+                Buy rare items<br>
+                Sell products<br>
+                Compete with bidders<br>
+                Win amazing deals
+            </p>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right-section">
+
+        <div class="login-card">
+
+            <h2>Register</h2>
+
+            <!-- Form rendered manually to hide help texts -->
+            <form method="post">
+                {% csrf_token %}
+                
+                <!-- Username -->
+                <div class="form-group">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    {{ form.username.errors }}
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    {{ form.password1.label_tag }}
+                    {{ form.password1 }}
+                    {{ form.password1.errors }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.password2.label_tag }}
+                    {{ form.password2 }}
+                    {{ form.password2.errors }}
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <!-- Login Link -->
+            <p style="text-align:center; margin-top:15px;">Already have an account?</p>
+            <a href="/accounts/login/" class="btn register-btn">Login</a>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/my_auctions.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auctions-container">
+
+<h2>My Auctions</h2>
+
+{% for auction in auctions %}
+<div class="auction-card">
+    <h5>{{ auction.title }}</h5>
+    <p>₹ {{ auction.start_price }}</p>
+
+    {% if auction.is_active %}
+    <span class="badge bg-success">Live</span>
+    {% else %}
+    <span class="badge bg-danger">Closed</span>
+    <p class="winner">Winner: {{ auction.winner }}</p>
+    {% endif %}
+</div>
+{% empty %}
+<p style="text-align:center;">No auctions yet.</p>
+{% endfor %}
+
+</div>
+{% endblock %}

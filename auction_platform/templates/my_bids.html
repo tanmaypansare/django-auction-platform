@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/my_bids.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="bids-container">
+
+<h2>My Bids</h2>
+
+{% for bid in bids %}
+<div class="bid-card">
+    <a href="/auction/{{ bid.auction.id }}/">
+        {{ bid.auction.title }}
+    </a>
+    <div>
+        <span class="bid-amount">₹{{ bid.amount }}</span>
+        {% with highest=bid.auction.bid_set.all|dictsortreversed:"amount"|first %}
+            {% if highest and highest.bidder != user %}
+                <span class="outbid">⚠ Outbid</span>
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+{% empty %}
+<p style="text-align:center;">No bids yet</p>
+{% endfor %}
+
+</div>
+{% endblock %}

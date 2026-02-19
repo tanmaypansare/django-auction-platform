@@ -1,0 +1,105 @@
+/* CREATE AUCTION PAGE STYLES */
+
+/* MAIN CONTAINER */
+.create-auction-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    min-height: 100vh;
+    background: #f4f4f4; /* light background for contrast */
+}
+
+/* FORM CARD */
+.auction-card {
+    background: white;
+    padding: 40px;
+    width: 80%;              /* card width */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.8s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CARD HEADING */
+.auction-card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #111;
+}
+
+/* INPUTS AND TEXTAREAS */
+.auction-card input,
+.auction-card textarea,
+.auction-card select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.auction-card input:focus,
+.auction-card textarea:focus,
+.auction-card select:focus {
+    border-color: black;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* FILE INPUT */
+.auction-card input[type="file"] {
+    padding: 5px;
+}
+
+/* BUTTON */
+.auction-card button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auction-card button:hover {
+    background: #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* ERROR MESSAGES */
+.auction-card .errorlist {
+    color: red;
+    margin: 5px 0 10px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .create-auction-container {
+        padding: 20px 10px;
+    }
+
+    .auction-card {
+        width: 90%;
+        padding: 30px;
+    }
+}

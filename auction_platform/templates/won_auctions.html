@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/won_auctions.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="won-auctions-container">
+
+<h2 style="text-align:center; margin-bottom:30px;">🏆 Auctions You Won</h2>
+<hr>
+
+<div class="auction-cards">
+    {% for auction in auctions %}
+    <div class="auction-card">
+        <a href="/auction/{{ auction.id }}/">
+            {% if auction.auctionimage_set.first %}
+            <img src="{{ auction.auctionimage_set.first.image.url }}" alt="{{ auction.title }}" class="auction-img">
+            {% else %}
+            <img src="{% static 'images/default_auction.jpg' %}" alt="No Image" class="auction-img">
+            {% endif %}
+            <h3>{{ auction.title }}</h3>
+        </a>
+    </div>
+    {% empty %}
+    <p style="text-align:center;">You have not won any auctions yet.</p>
+    {% endfor %}
+</div>
+
+</div>
+{% endblock %}

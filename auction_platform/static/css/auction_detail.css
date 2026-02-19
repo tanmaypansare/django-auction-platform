@@ -1,0 +1,116 @@
+/* AUCTION DETAIL PAGE STYLES */
+
+.auction-container {
+    max-width: 900px;
+    width: 85%;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fdfdfd;
+}
+
+/* AUCTION TITLE */
+.auction-container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+/* DESCRIPTION AND DETAILS */
+.auction-container p {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+/* AUCTION IMAGE */
+.auction-container img {
+    display: block;
+    margin: 15px 0;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* AUCTION CLOSED MESSAGE */
+.auction-container h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* HR STYLING */
+.auction-container hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 30px 0;
+}
+
+/* BIDS LIST */
+.bids-list p {
+    padding: 10px 15px;
+    background: #fafafa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.bids-list p:hover {
+    background: #e6f7ff;
+    transform: translateX(5px);
+}
+
+/* OUTBID WARNING */
+.outbid-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* PLACE BID FORM */
+.bid-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bid-form input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+.bid-form button {
+    width: 150px;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bid-form button:hover {
+    background: #218838;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ERROR MESSAGES */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .bid-form input[type="number"], .bid-form button {
+        width: 100%;
+    }
+}

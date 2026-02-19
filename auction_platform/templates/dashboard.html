@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="account-container">
+
+<h2>My Account</h2>
+
+<p><b>Username:</b> {{ user.username }}</p>
+<p><b>Email:</b> {{ user.email }}</p>
+<hr>
+
+<h4>My Auction Stats</h4>
+
+<div class="row text-center">
+    <div class="col-md-6">
+        <a href="/accounts/won-auctions/" style="text-decoration:none;">
+            <div class="alert alert-success">
+                🏆 <b>You Won</b><br>
+                <h3>{{ won_auctions }}</h3>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6">
+        <a href="/accounts/lost-auctions/" style="text-decoration:none;">
+            <div class="alert alert-danger">
+                ❌ <b>You Lost</b><br>
+                <h3>{{ lost_auctions }}</h3>
+            </div>
+        </a>
+    </div>
+</div>
+
+<hr>
+
+<h4>My Auctions</h4>
+{% for a in my_auctions %}
+<p class="auction-item">{{ a.title }}</p>
+{% empty %}
+<p>No auctions</p>
+{% endfor %}
+
+<hr>
+
+<h4>My Bids</h4>
+{% for b in my_bids %}
+<p class="bid-item">{{ b.auction.title }} → ₹{{ b.amount }}</p>
+{% empty %}
+<p>No bids</p>
+{% endfor %}
+
+</div>
+{% endblock %}

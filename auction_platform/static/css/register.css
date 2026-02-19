@@ -1,0 +1,159 @@
+/* REGISTER PAGE STYLES */
+
+/* MAIN CONTAINER */
+.login-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    flex-wrap: nowrap;
+}
+
+/* LEFT SIDE */
+.left-section {
+    flex: 1 1 50%;
+    min-width: 300px;
+    background: linear-gradient(135deg, #141E30, #243B55);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* RIGHT SIDE */
+.right-section {
+    flex: 1 1 50%;
+    min-width: 300px;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* allows vertical scroll if content overflows */
+}
+
+/* QUOTE BOX */
+.quote-box {
+    max-width: 400px;
+    padding: 40px;
+    text-align: left;
+}
+
+.quote-box h1 {
+    font-size: 40px;
+}
+
+.quote {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+/* FORM CARD */
+.login-card {
+    background: white;
+    padding: 40px;
+    width: 400px;           /* adjust width if needed */
+    height: 450px;          /* adjust height here */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    overflow-y: auto;       /* enables scroll if content exceeds height */
+
+    /* Fade & slide animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.8s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CARD HEADING */
+.login-card h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* INPUTS */
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.login-card input:focus {
+    border-color: black;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* REGISTER BUTTON */
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-card button:hover {
+    background: #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* LOGIN LINK BUTTON */
+.register-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    background: #777;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .left-section {
+        height: 40vh;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .right-section {
+        height: auto;
+        padding: 20px;
+    }
+
+    .quote-box {
+        text-align: center;
+    }
+
+    .login-card {
+        width: 90%;        /* responsive width */
+        height: auto;      /* let content decide height on mobile */
+        max-height: 80vh;  /* optional max-height with scroll */
+        overflow-y: auto;  /* scroll if needed */
+    }
+}

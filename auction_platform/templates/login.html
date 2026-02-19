@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+
+    <!-- LEFT SIDE -->
+    <div class="left-section">
+        <div class="quote-box">
+            <h1>Elite Auctions</h1>
+
+            <p class="quote">
+                "Every bid brings you closer to victory."
+            </p>
+
+            <p>
+                Buy rare items<br>
+                Sell products<br>
+                Compete with bidders<br>
+                Win amazing deals
+            </p>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right-section">
+
+        <div class="login-card">
+
+            <h2>Login</h2>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Login</button>
+            </form>
+            
+            
+            <!-- Register Button -->
+            <p style="text-align:center; margin-top:15px;">Don't have an account?</p>
+            <a href="/accounts/register/" class="btn register-btn">Register</a>
+            
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

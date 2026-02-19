@@ -1,0 +1,73 @@
+/* LOST AUCTIONS PAGE */
+
+/* CONTAINER */
+.lost-auctions-container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* AUCTION CARDS GRID */
+.auction-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* AUCTION CARD */
+.auction-card {
+    width: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.auction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* LOST AUCTIONS COLOR TINT */
+.auction-card.lost {
+    border: 2px solid #dc3545;
+}
+
+/* LINK AND IMAGE */
+.auction-card a {
+    text-decoration: none;
+    color: #111;
+    display: block;
+}
+
+.auction-card img.auction-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* TITLE */
+.auction-card h3 {
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 600;
+    color: #dc3545; /* Red to indicate loss */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .auction-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .auction-card {
+        width: 90%;
+    }
+}

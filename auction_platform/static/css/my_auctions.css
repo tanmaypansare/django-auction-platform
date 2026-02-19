@@ -1,0 +1,90 @@
+/* MY AUCTIONS PAGE STYLES */
+
+/* MAIN CONTAINER */
+.auctions-container {
+    max-width: 900px;
+    width: 85%;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* PAGE TITLE */
+.auctions-container h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* AUCTION CARD */
+.auction-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.auction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* TITLE AND PRICE */
+.auction-card h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.auction-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* BADGES */
+.auction-card .badge {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.badge.bg-success {
+    background: #28a745;
+    color: #fff;
+}
+
+.badge.bg-danger {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* WINNER TEXT */
+.auction-card .winner {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .auction-card {
+        padding: 15px;
+    }
+
+    .auction-card h5 {
+        font-size: 18px;
+    }
+
+    .auction-card p {
+        font-size: 14px;
+    }
+
+    .badge {
+        font-size: 12px;
+    }
+}
